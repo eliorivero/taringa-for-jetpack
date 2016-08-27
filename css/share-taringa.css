@@ -1,4 +1,22 @@
-#services-config .service.share-taringa{
-	background: url( '../img/taringa.svg' ) no-repeat 5px 6px;
+#services-config .service.share-taringa,
+.sd-content ul li.preview-item div.option.option-smart-off a.share-taringa {
+	position: relative;
 	padding-left: 25px;
+}
+#services-config .service.share-taringa::before,
+.advanced.preview-item .share-taringa::before {
+	content: " ";
+	position: absolute;
+	top: 6px;
+	left: 5px;
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: url( '../img/taringa.svg' ) no-repeat 0;
+	opacity: .7;
+}
+
+.advanced.preview-item .share-taringa::before {
+	top: 4px;
+	opacity: .5;
 }
