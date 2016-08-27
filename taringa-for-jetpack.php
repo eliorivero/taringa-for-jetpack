@@ -17,6 +17,7 @@ define( 'JPFT__PLUGIN_FILE', __FILE__ );
 
 // Localize
 add_action( 'plugins_loaded', 'jpft_localization' );
+add_action( 'plugins_loaded', 'taringa_for_jetpack_init' );
 
 // Insert our CSS and JS
 add_action( 'load-settings_page_sharing', 'jpft_sharing_head' );
@@ -56,4 +57,21 @@ function jpft_sharing_head() {
  */
 function jpft_localization() {
 	load_plugin_textdomain( 'jetpack', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+}
+
+function taringa_for_jetpack_init() {
+	if ( class_exists( 'Jetpack' ) ) {
+		define( 'TARINGA_FOR_JETPACK_JETPACK_IS_ACTIVE', true );
+	} else {
+		add_action( 'admin_notices', 'taringa_for_jetpack_jetpack_not_active' );
+		define( 'TARINGA_FOR_JETPACK_JETPACK_IS_ACTIVE', false );
+	}
+}
+
+function taringa_for_jetpack_jetpack_not_active() {
+?>
+	<div class="notice notice-error is-dismissible">
+		<p><?php _e( 'Taringa for Jetpack requires the Jetpack plugin to be active on this WordPress installation!', 'taringa-for-jetpack' ); ?></p>
+	</div>
+<?php
 }
