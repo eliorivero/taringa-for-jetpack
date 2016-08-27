@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Taringa for Jetpack
  * Plugin URI: https://github.com/eliorivero/taringa-for-jetpack/
- * Description: Sharing button and Publicize extension for Taringa
+ * Description: Extension for Jetpack's Sharing to allow sharing a post to Taringa.
  * Author: Automattic
  * Version: 0.0.7
  * Author URI: https://automattic.com/
