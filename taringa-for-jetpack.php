@@ -17,7 +17,10 @@ define( 'JPFT__PLUGIN_FILE', __FILE__ );
 
 // Localize
 add_action( 'plugins_loaded', 'jpft_localization' );
+// Jetpack depedency
 add_action( 'plugins_loaded', 'taringa_for_jetpack_init' );
+
+add_action( 'admin_menu', 'taringa_for_jetpack' );
 
 // Insert our CSS and JS
 add_action( 'load-settings_page_sharing', 'jpft_sharing_head' );
@@ -74,4 +77,24 @@ function taringa_for_jetpack_jetpack_not_active() {
 		<p><?php _e( 'Taringa for Jetpack requires the Jetpack plugin to be active on this WordPress installation!', 'taringa-for-jetpack' ); ?></p>
 	</div>
 <?php
+}
+
+
+/*
+ * Register options page
+ */
+function taringa_for_jetpack() {
+	add_options_page( 'Taringa for Jetpack', 'Taringa for Jetpack', 'manage_options', 'taringa-for-jetpack', 'taringa_for_jetpack_options' );
+}
+
+/*
+ * Options page
+ */
+function taringa_for_jetpack_options() {
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	echo '<div class="wrap">';
+	echo '<p>Here is where the form would go if I actually had options.</p>';
+	echo '</div>';
 }
