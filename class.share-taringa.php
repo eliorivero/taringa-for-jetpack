@@ -32,7 +32,7 @@ class JPFT_Share_Taringa extends Sharing_Source {
 	}
 
 	public function process_request( $post, array $post_data ) {
-		$taringa_url = $this->http() . '://taringa.com/submit?url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&title=' . rawurlencode( $this->get_share_title( $post->ID ) );
+		$taringa_url = 'http://taringa.net/widgets/share.php?url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&title=' . rawurlencode( $this->get_share_title( $post->ID ) );
 
 		// Record stats
 		parent::process_request( $post, $post_data );
