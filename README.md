@@ -34,7 +34,6 @@ $ git clone https://github.com/eliorivero/taringa-for-jetpack
 * [HackDash project](https://hackdash.org/projects/57c1a449d9284f016c047272)
 
 
-
 ## License
 
 GPL
