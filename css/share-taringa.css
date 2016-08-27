@@ -1,10 +1,10 @@
-#services-config div.option.option-smart-off .service.share-taringa,
-.sd-content ul li.preview-item div.option.option-smart-off a.share-taringa {
+#services-config div.option .service.share-taringa,
+.sd-content ul li.preview-item.preview-taringa div.option a.share-taringa {
 	position: relative;
 	padding-left: 25px;
 }
-#services-config div.option.option-smart-off .service.share-taringa::before,
-.advanced.preview-item div.option.option-smart-off .share-taringa::before {
+#services-config div.option .service.share-taringa::before,
+.advanced.preview-item div.option .share-taringa::before {
 	content: " ";
 	position: absolute;
 	top: 6px;
@@ -16,7 +16,7 @@
 	opacity: .7;
 }
 
-.advanced.preview-item div.option.option-smart-off .share-taringa::before {
+.advanced.preview-item div.option .share-taringa::before {
 	top: 4px;
 	opacity: .5;
 }
@@ -24,6 +24,30 @@
 .sd-content ul li.preview-item.no-icon div.option.option-smart-off a.share-taringa {
 	padding-left: 5px;
 }
+
 .advanced.preview-item.no-icon div.option.option-smart-off .share-taringa::before {
 	display: none;
+}
+
+.advanced.preview-item div.option.option-smart-off .no-text.share-taringa::before {
+	background: url( '../img/taringa-nobg.svg' ) no-repeat 0;
+	opacity: 1;
+	top: 7px;
+	left: 8px;
+	height: 18px;
+}
+
+.sd-social-icon .sd-content ul li[class*='share-'].share-taringa a.sd-button {
+	background: #005dab;
+	color: #fff !important;
+	height: 17px;
+}
+
+.advanced.preview-item div.option.option-smart-on .share-taringa::before {
+	background: url( '../img/share-taringa.png' ) no-repeat 0;
+	opacity: 1;
+	top: -1px;
+	left: 0;
+	height: 20px;
+	width: 76px;
 }
