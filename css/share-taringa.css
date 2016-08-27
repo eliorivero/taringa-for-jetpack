@@ -1,10 +1,10 @@
-#services-config .service.share-taringa,
+#services-config div.option.option-smart-off .service.share-taringa,
 .sd-content ul li.preview-item div.option.option-smart-off a.share-taringa {
 	position: relative;
 	padding-left: 25px;
 }
-#services-config .service.share-taringa::before,
-.advanced.preview-item .share-taringa::before {
+#services-config div.option.option-smart-off .service.share-taringa::before,
+.advanced.preview-item div.option.option-smart-off .share-taringa::before {
 	content: " ";
 	position: absolute;
 	top: 6px;
@@ -16,7 +16,14 @@
 	opacity: .7;
 }
 
-.advanced.preview-item .share-taringa::before {
+.advanced.preview-item div.option.option-smart-off .share-taringa::before {
 	top: 4px;
 	opacity: .5;
+}
+
+.sd-content ul li.preview-item.no-icon div.option.option-smart-off a.share-taringa {
+	padding-left: 5px;
+}
+.advanced.preview-item.no-icon div.option.option-smart-off .share-taringa::before {
+	display: none;
 }

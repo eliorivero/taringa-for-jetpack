@@ -12,11 +12,7 @@ class JPFT_Share_Taringa extends Sharing_Source {
 	public function __construct( $id, array $settings ) {
 		parent::__construct( $id, $settings );
 
-		if ( 'official' == $this->button_style ) {
-			$this->smart = true;
-		} else {
-			$this->smart = false;
-		}
+		$this->smart = 'official' == $this->button_style;
 	}
 
 	public function get_name() {
@@ -25,9 +21,7 @@ class JPFT_Share_Taringa extends Sharing_Source {
 
 	public function get_display( $post ) {
 		if ( $this->smart ) {
-			return '<script type="text/javascript">(function(){var x=document.createElement(\'script\'),
-s=document.getElementsByTagName(\'script\')[0];x.async=true;x.src=\'' . $this->get_sharejs() . '\';s.parentNode.insertBefore(x,s)})()</script>
-<t:sharer data-url="' . rawurlencode( $this->get_share_url( $post->ID ) ) . '" data-layout="medium_simple"></t:sharer>';
+			return '<t:sharer data-url="' . rawurlencode( $this->get_share_url( $post->ID ) ) . '" data-layout="medium_simple"></t:sharer>';
 		} else {
 			return $this->get_link( $this->get_process_request_url( $post->ID ), esc_html_x( 'Taringa', 'share to', 'jetpack' ), esc_html__( 'Click to share on Taringa', 'jetpack' ), 'share=taringa' );
 		}
@@ -46,5 +40,15 @@ s=document.getElementsByTagName(\'script\')[0];x.async=true;x.src=\'' . $this->g
 		// Redirect to Taringa
 		wp_redirect( $taringa_url );
 		die();
+	}
+
+	public function display_footer() {
+		if ( $this->smart ) {
+			?>
+			<script type="text/javascript">(function(){var x=document.createElement(\'script\'),s=document.getElementsByTagName(\'script\')[0];x.async=true;x.src=\'' . $this->get_sharejs() . '\';s.parentNode.insertBefore(x,s)})()</script>
+			<?php
+		} else {
+			$this->js_dialog( $this->shortname, array( 'height' => 350 ) );
+		}
 	}
 }
