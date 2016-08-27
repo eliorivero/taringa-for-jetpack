@@ -1,0 +1,4 @@
+#services-config .service.share-taringa{
+	background: url( '../img/taringa.svg' ) no-repeat 5px 6px;
+	padding-left: 25px;
+}
