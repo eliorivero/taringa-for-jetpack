@@ -25,7 +25,8 @@ class JPFT_Share_Taringa extends Sharing_Source {
 
 	public function get_display( $post ) {
 		if ( $this->smart ) {
-			return '<script type="text/javascript">(function(){var x=document.createElement(\'script\'), s=document.getElementsByTagName(\'script\')[0];x.async=true;x.src=\'' . $this->http() . '://widgets.itaringa.net/share.js\';s.parentNode.insertBefore(x,s)})()</script>
+			return '<script type="text/javascript">(function(){var x=document.createElement(\'script\'),
+s=document.getElementsByTagName(\'script\')[0];x.async=true;x.src=\'http://widgets.itaringa.net/share.js\';s.parentNode.insertBefore(x,s)})()</script>
 <t:sharer data-url="' . rawurlencode( $this->get_share_url( $post->ID ) ) . '" data-layout="medium_simple"></t:sharer>';
 		} else {
 			return $this->get_link( $this->get_process_request_url( $post->ID ), esc_html_x( 'Taringa', 'share to', 'jetpack' ), esc_html__( 'Click to share on Taringa', 'jetpack' ), 'share=taringa' );
