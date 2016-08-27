@@ -44,9 +44,7 @@ class JPFT_Share_Taringa extends Sharing_Source {
 
 	public function display_footer() {
 		if ( $this->smart ) {
-			?>
-			<script type="text/javascript">(function(){var x=document.createElement(\'script\'),s=document.getElementsByTagName(\'script\')[0];x.async=true;x.src=\'' . $this->get_sharejs() . '\';s.parentNode.insertBefore(x,s)})()</script>
-			<?php
+			echo '<script type="text/javascript">(function(){var x=document.createElement(\'script\'),s=document.getElementsByTagName(\'script\')[0];x.async=true;x.src=\'' . $this->get_sharejs() . '\';s.parentNode.insertBefore(x,s)})()</script>';
 		} else {
 			$this->js_dialog( $this->shortname, array( 'height' => 350 ) );
 		}

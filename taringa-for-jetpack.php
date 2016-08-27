@@ -20,7 +20,8 @@ add_action( 'plugins_loaded', 'jpft_localization' );
 add_action( 'plugins_loaded', 'taringa_for_jetpack_init' );
 
 // Insert our CSS and JS
-add_action( 'load-settings_page_sharing', 'jpft_sharing_head' );
+add_action( 'load-settings_page_sharing', 'jpft_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', 'jpft_enqueue_assets' );
 
 // Add button
 add_filter( 'sharing_services', 'jpft_add_sharing' );
@@ -41,11 +42,11 @@ function jpft_add_sharing( $services ) {
 }
 
 /**
- * Add styles and scripts.
+ * Register styles and scripts.
  *
  * @since 0.0.7
  */
-function jpft_sharing_head() {
+function jpft_enqueue_assets() {
 	wp_enqueue_style( 'share-taringa', plugins_url( 'css/share-taringa.css', __FILE__ ), array(), JETPACK__VERSION );
 }
 
