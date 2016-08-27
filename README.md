@@ -1,4 +1,5 @@
-# taringa-for-jetpack
+# Taringa for Jetpack
+
 Sharing button and Publicize extension for Taringa
 
 [Jetpack](https://jetpack.com) is a a popular WordPress plugin which allows your site to have auto-publication of your articles in several Social Networks as well as inclusion of Sharing buttons, and lots of [other cools features](https://jetpack.com/features/).
@@ -26,6 +27,7 @@ This plugin will depend on the **Jetpack** plugin for Wordpress.
 $ cd wp-content/plugins
 $ git clone https://github.com/eliorivero/taringa-for-jetpack
 ```
+2. Login to the WP Admin, go to the Plugins area and activate this plugin.
 
 ## Resources for devs while doing this plugin.
 
@@ -36,6 +38,5 @@ $ git clone https://github.com/eliorivero/taringa-for-jetpack
 
 ## License
 
-GPL
-
+GPL v2
 
