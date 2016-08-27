@@ -21,12 +21,22 @@ add_action( 'plugins_loaded', 'jpft_localization' );
 // Check if Jetpack is active
 add_action( 'admin_init', 'jptf_check_jetpack_active' );
 
-// Insert our CSS and JS
-add_action( 'load-settings_page_sharing', 'jpft_enqueue_assets' );
-add_action( 'wp_enqueue_scripts', 'jpft_enqueue_assets' );
+// If Jetpack is loaded, start this extension
+add_action( 'jetpack_modules_loaded', 'jptf_init' );
 
-// Add button
-add_filter( 'sharing_services', 'jpft_add_sharing' );
+/**
+ * Add button, enqueue assets and initialize everything.
+ *
+ * @since 0.0.7
+ */
+function jptf_init() {
+	// Insert our CSS and JS
+	add_action( 'load-settings_page_sharing', 'jpft_enqueue_assets' );
+	add_action( 'wp_enqueue_scripts', 'jpft_enqueue_assets' );
+
+	// Add button
+	add_filter( 'sharing_services', 'jpft_add_sharing' );
+}
 
 /**
  * Add button to list of sharing services.
