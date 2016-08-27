@@ -12,6 +12,8 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
+include( 'authorize.php' );
+
 define( 'JPFT__PLUGIN_DIR',  plugin_dir_path( __FILE__ ) );
 define( 'JPFT__PLUGIN_FILE', __FILE__ );
 
@@ -85,16 +87,17 @@ function taringa_for_jetpack_jetpack_not_active() {
  */
 function taringa_for_jetpack() {
 	add_options_page( 'Taringa for Jetpack', 'Taringa for Jetpack', 'manage_options', 'taringa-for-jetpack', 'taringa_for_jetpack_options' );
+	add_options_page( 'Taringa for Jetpack - Authorize', 'Authorize Taringa for Jetpack', 'manage_options', 'taringa-for-jetpack-authorize', 'taringa_for_jetpack_authorize' );
 }
 
 /*
  * Options page
  */
+
+
 function taringa_for_jetpack_options() {
-	if ( !current_user_can( 'manage_options' ) )  {
-		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
-	}
 	echo '<div class="wrap">';
 	echo '<p>Here is where the form would go if I actually had options.</p>';
+	echo '<p><a href="?page=taringa-for-jetpack-authorize">Authorize</a></p>';
 	echo '</div>';
 }
