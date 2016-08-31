@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: Taringa for Jetpack
+ * Plugin Name: Taringa! for Jetpack
  * Plugin URI: https://github.com/eliorivero/taringa-for-jetpack/
- * Description: Extension for Jetpack's Sharing to allow sharing a post to Taringa.
- * Author: Automattic
+ * Description: Extension for Jetpack's Sharing to allow sharing a post to Taringa!
+ * Author: Elio Rivero
  * Version: 0.0.7
- * Author URI: https://automattic.com/
+ * Author URI: https://twitter.com/eliorivero
  * Text Domain: jetpack
  * Domain Path: /languages
  * License: GPL2
